@@ -1,0 +1,28 @@
+.app {
+    font-family: Arial, sans-serif;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .task-item {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .completed {
+    background-color: #d3ffd3;
+    text-decoration: line-through;
+  }
+  
+  button {
+    margin-top: 10px;
+  }
+  
+  form div {
+    margin-bottom: 10px;
+  }
+  
