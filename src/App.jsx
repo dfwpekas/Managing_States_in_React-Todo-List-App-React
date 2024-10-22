@@ -4,15 +4,8 @@ import TaskList from './components/TaskList';
 import './App.css';
 
 
-function App() {
-  const [tasks, setTasks] = useState([
-    {
-      id: Date.now(),
-      name: 'Monday Meeting',
-      description: 'Meeting with the team to discuss the weekly goals',
-      completed: false
-    }
-  ]);
+const App = () => {
+  const [tasks, setTasks] = useState([]);
 
   // load tasks from LocalStorage when the component mounts
   useEffect(() => {
@@ -50,7 +43,7 @@ function App() {
 
   return (
     <div className='app'>
-      <h1>To-Do List</h1>
+      <h1 style={{textAlign: 'center'}}>To-Do List</h1>
       <TaskForm addTask={addTask} />
       <TaskList 
         tasks={tasks}

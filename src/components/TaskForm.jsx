@@ -13,7 +13,7 @@ const TaskForm = ({ addTask }) => {
         e.preventDefault(); 
 
         if (!taskName || !taskDescription)  { // To Check if fields are empty
-            setError('Both Fields are required'); // Set error message
+            setError('Both Fields are required.'); // Set error message
             return;
         }
 
@@ -32,23 +32,24 @@ const TaskForm = ({ addTask }) => {
 
     }
         return (
-            <form onSubmit={handleSubmit} style={{ border: "1px solid red" }}>
+            <form onSubmit={handleSubmit} className="task-form">
                 <div>
                     <input type="text"
                     placeholder="Task Name" 
                     value={taskName}
-                    onChange={(e)=> setTaskName(e.target.value)}/>
+                    onChange={(e)=> setTaskName(e.target.value)} className="form-input"/>
                 </div>
     
                 <div>
                     <textarea
                     placeholder="Task Description"
                     value={taskDescription}
-                    onChange={(e) => setTaskDescription(e.target.value)}/>
+                    onChange={(e) => setTaskDescription(e.target.value)}  className="form-input"/>
+
                 </div>
     
                 {error && <p style={{color: 'red'}}>{error}</p>}
-                <button type="submit">Add Task</button>
+                <button type="submit" className="form-button">Add Task</button>
             </form>
     
         ) 

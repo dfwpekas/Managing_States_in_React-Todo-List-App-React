@@ -2,7 +2,7 @@ import TaskItem from "./TaskItem";
 
 const TaskList = ({ tasks, updateTask, deleteTask, toggleTaskCompletion }) => {
     return (
-        <div>
+        <div className="task-list">
             {tasks.length === 0 ? ( <p> No Task(s) Available</p> ) : (
                 tasks.map((task) => (
                     <TaskItem 

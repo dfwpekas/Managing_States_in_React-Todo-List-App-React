@@ -21,25 +21,25 @@ const TaskItem = ({ task, updateTask, deleteTask, toggleTaskCompletion }) => {
     return (
         <div className={`task-item ${task.completed ? 'completed' : ''}`}>
             {isEditing ? (
-                <form onSubmit={handleEditSubmit}>
+                <form onSubmit={handleEditSubmit} >
                     <input type="text" 
                     value={editedTaskName}
-                    onChange={(e) => setEditedTaskName(e.target.value)}/>
+                    onChange={(e) => setEditedTaskName(e.target.value)} className="edit-form"/>
                     <textarea 
                     value={editedTaskDescription}
-                    onChange={(e) => setEditedTaskDescription(e.target.value)}
+                    onChange={(e) => setEditedTaskDescription(e.target.value)} className="edit-form"
                     />
-                    <button type="submit">Save</button>
+                    <button type="submit" className="task-item-btn">Save</button>
                 </form>
             ) : (
                 <>
                     <h2>{task.name}</h2>
                     <p>{task.description}</p>
-                    <button onClick={() => toggleTaskCompletion(task.id)}>
+                    <button onClick={() => toggleTaskCompletion(task.id)} className="task-item-btn">
                         {task.completed ? 'Uncompleted' : 'Completed'}
                     </button>
-                    <button onClick={() => setIsEditing(true)}>Edit Task</button>
-                    <button onClick={() => deleteTask(task.id)}>Delete Task</button>
+                    <button onClick={() => setIsEditing(true)} className="task-item-btn">Edit Task</button>
+                    <button onClick={() => deleteTask(task.id)} className="task-item-btn">Delete Task</button>
                 </>
             )}
         </div>
